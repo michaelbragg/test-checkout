@@ -1,0 +1,21 @@
+name: "Test"
+
+# All branches push to a `{current_branch_name}--built` branch.
+# This new branch can be connected to a Git deployment process.
+# To add extra deployment branches, add a new starting point to the allow branches.
+
+on:
+  push:
+  
+jobs:
+
+  test:
+      name: "Test"
+      runs-on: 'ubuntu-latest'
+      steps:
+
+        - name: "Checks out the repository."
+          uses: actions/checkout@v4.1.0
+          with:
+            ref: example-branch
+
