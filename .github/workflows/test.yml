@@ -19,8 +19,10 @@ jobs:
 
         - name: "Branch Test"
           run: |
-            git ls-remote --heads origin refs/heads/example-branch
-
+            git ls-remote --heads origin refs/heads/example-branch | wc -l
+            git ls-remote --heads origin refs/heads/develop | wc -l
+           
         - name: "Branch Test 2"
           run: |
-            git ls-remote --heads origin refs/heads/develop
+            git ls-remote --exit-code --heads git@github.com:${GITHUB_REPOSITORY}.git refs/heads/example-branch
+            git ls-remote --exit-code --heads git@github.com:${GITHUB_REPOSITORY}.git refs/heads/develop
