@@ -16,6 +16,7 @@ jobs:
 
         - name: "Checks out the repository."
           uses: actions/checkout@v4.1.0
-          with:
-            ref: example-branch
 
+        - name: "Branch Test"
+          run: |
+            git ls-remote --heads origin refs/heads/example-branch
