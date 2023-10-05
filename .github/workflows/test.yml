@@ -20,3 +20,7 @@ jobs:
         - name: "Branch Test"
           run: |
             git ls-remote --heads origin refs/heads/example-branch
+
+        - name: "Branch Test 2"
+          run: |
+            git ls-remote --heads origin refs/heads/develop
